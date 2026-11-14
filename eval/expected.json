@@ -601,5 +601,279 @@
    "op": "refuse",
    "reason": "unknown_port"
   }
+ ],
+ "B01": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0011",
+    "DL-0036"
+   ],
+   "value": null
+  }
+ ],
+ "B02": [
+  {
+   "op": "refuse",
+   "reason": "out_of_scope"
+  }
+ ],
+ "B03": [
+  {
+   "op": "transit",
+   "ids": [
+    "DL-0010",
+    "DL-0035",
+    "DL-0060",
+    "DL-0085",
+    "DL-0111",
+    "DL-0136"
+   ],
+   "value": [
+    20,
+    21
+   ]
+  }
+ ],
+ "B04": [
+  {
+   "op": "count",
+   "ids": [
+    "DL-0073",
+    "DL-0149"
+   ],
+   "value": 2
+  }
+ ],
+ "B05": [
+  {
+   "op": "refuse",
+   "reason": "unknown_port"
+  }
+ ],
+ "B06": [
+  {
+   "op": "fastest",
+   "ids": [
+    "DL-0102"
+   ],
+   "value": null
+  }
+ ],
+ "B07": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-02"
+   ],
+   "value": null
+  }
+ ],
+ "B08": [
+  {
+   "op": "refuse",
+   "reason": "missing_info"
+  }
+ ],
+ "B09": [
+  {
+   "op": "earliest_arrival",
+   "ids": [
+    "DL-0003"
+   ],
+   "value": null
+  }
+ ],
+ "B10": [
+  {
+   "op": "next",
+   "ids": [
+    "DL-0008"
+   ],
+   "value": null
+  }
+ ],
+ "B11": [
+  {
+   "op": "refuse",
+   "reason": "no_data"
+  }
+ ],
+ "B12": [
+  {
+   "op": "cutoff",
+   "ids": [
+    "DL-0071"
+   ],
+   "value": [
+    "2026-12-02 17:00"
+   ]
+  }
+ ],
+ "B13": [
+  {
+   "op": "refuse",
+   "reason": "out_of_scope"
+  }
+ ],
+ "B14": [
+  {
+   "op": "cutoff",
+   "ids": [
+    "DL-0047"
+   ],
+   "value": [
+    "2026-11-26 18:00"
+   ]
+  }
+ ],
+ "B15": [
+  {
+   "op": "detail",
+   "ids": [
+    "DL-0116"
+   ],
+   "value": null
+  }
+ ],
+ "B16": [
+  {
+   "op": "refuse",
+   "reason": "unknown_port"
+  }
+ ],
+ "B17": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0113",
+    "DL-0138"
+   ],
+   "value": null
+  }
+ ],
+ "B18": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-11"
+   ],
+   "value": null
+  }
+ ],
+ "B19": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0016"
+   ],
+   "value": null
+  }
+ ],
+ "B20": [
+  {
+   "op": "refuse",
+   "reason": "out_of_scope"
+  }
+ ],
+ "B21": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0021",
+    "DL-0046"
+   ],
+   "value": null
+  }
+ ],
+ "B22": [
+  {
+   "op": "refuse",
+   "reason": "missing_info"
+  }
+ ],
+ "B23": [
+  {
+   "op": "cutoff",
+   "ids": [
+    "DL-0034"
+   ],
+   "value": [
+    "2026-11-23 14:00"
+   ]
+  }
+ ],
+ "B24": [
+  {
+   "op": "refuse",
+   "reason": "no_data"
+  }
+ ],
+ "B25": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0014"
+   ],
+   "value": null
+  },
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-04"
+   ],
+   "value": null
+  }
+ ],
+ "B26": [
+  {
+   "op": "refuse",
+   "reason": "out_of_scope"
+  }
+ ],
+ "B27": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-07"
+   ],
+   "value": null
+  }
+ ],
+ "B28": [
+  {
+   "op": "refuse",
+   "reason": "missing_info"
+  }
+ ],
+ "B29": [
+  {
+   "op": "transit",
+   "ids": [
+    "DL-0016",
+    "DL-0041",
+    "DL-0065",
+    "DL-0091",
+    "DL-0117",
+    "DL-0142"
+   ],
+   "value": [
+    4,
+    6
+   ]
+  },
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-12"
+   ],
+   "value": null
+  }
+ ],
+ "B30": [
+  {
+   "op": "refuse",
+   "reason": "no_data"
+  }
  ]
 }

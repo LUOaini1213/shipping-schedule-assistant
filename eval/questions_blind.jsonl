@@ -1,0 +1,30 @@
+{"id":"B01","split":"blind","q":"any vessels from klang to jebel ali leaving in the next 10 days?","gold":[{"op":"list","o":"MYPKG","d":"AEJEA","etd_from":"2026-11-16","etd_to":"2026-11-26"}]}
+{"id":"B02","split":"blind","q":"can you quote all-in for 2x40HC ningbo to los angeles","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"B03","split":"blind","q":"Roughly how long is the voyage from Colombo to Rotterdam?","gold":[{"op":"transit","o":"LKCMB","d":"NLRTM"}]}
+{"id":"B04","split":"blind","q":"how many departures do you have dubai to rotterdam in december","gold":[{"op":"count","o":"AEJEA","d":"NLRTM","etd_from":"2026-12-01","etd_to":"2026-12-31"}]}
+{"id":"B05","split":"blind","q":"Singapore to Felixstowe - what do you have in December?","gold":[{"op":"refuse","reason":"unknown_port"}]}
+{"id":"B06","split":"blind","q":"Shortest transit option Shanghai to Rotterdam?","gold":[{"op":"fastest","o":"CNSHA","d":"NLRTM"}]}
+{"id":"B07","split":"blind","q":"what details have to go in the SI?","gold":[{"op":"faq","faq":"FAQ-02"}]}
+{"id":"B08","split":"blind","q":"What's leaving Singapore next week?","gold":[{"op":"refuse","reason":"missing_info"}]}
+{"id":"B09","split":"blind","q":"We load at Pusan for Los Angeles. Which vessel lands there soonest?","gold":[{"op":"earliest_arrival","o":"KRPUS","d":"USLAX"}]}
+{"id":"B10","split":"blind","q":"next boat spore to klang pls","gold":[{"op":"next","o":"SGSIN","d":"MYPKG"}]}
+{"id":"B11","split":"blind","q":"Any service from Busan to Rotterdam?","gold":[{"op":"refuse","reason":"no_data"}]}
+{"id":"B12","split":"blind","q":"By what time do the shipping instructions have to be in for DL-0071?","gold":[{"op":"cutoff","id":"DL-0071","field":"doc_cutoff"}]}
+{"id":"B13","split":"blind","q":"Please move my booking onto the 24 Nov Rotterdam sailing.","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"B14","split":"blind","q":"cy closing for the first yantian to rotterdam vessel next week?","gold":[{"op":"cutoff","o":"CNYTN","d":"NLRTM","field":"cy_cutoff","etd_from":"2026-11-23","etd_to":"2026-11-29"}]}
+{"id":"B15","split":"blind","q":"Could you pull up the full info on sailing DL-0116, please?","gold":[{"op":"detail","id":"DL-0116"}]}
+{"id":"B16","split":"blind","q":"transit time ho chi minh to LA?","gold":[{"op":"refuse","reason":"unknown_port"}]}
+{"id":"B17","split":"blind","q":"Direct only please: SIN to Shanghai, leaving from 10 Dec.","gold":[{"op":"list","o":"SGSIN","d":"CNSHA","etd_from":"2026-12-10","direct":true}]}
+{"id":"B18","split":"blind","q":"How firm are the departure dates you show? Our last vessel slipped by three days.","gold":[{"op":"faq","faq":"FAQ-11"}]}
+{"id":"B19","split":"blind","q":"Which sailings from Hong Kong get into Singapore by 30 Nov?","gold":[{"op":"list","o":"HKHKG","d":"SGSIN","eta_to":"2026-11-30"}]}
+{"id":"B20","split":"blind","q":"How many free days of demurrage do we get in Hamburg?","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"B21","split":"blind","q":"Shanghai to LA with Demo Line Charlie, departing before 5 December - what's available?","gold":[{"op":"list","o":"CNSHA","d":"USLAX","etd_to":"2026-12-04","carrier":"Demo Line Charlie"}]}
+{"id":"B22","split":"blind","q":"doc cutoff for the Busan departure on 23 Nov?","gold":[{"op":"refuse","reason":"missing_info"}]}
+{"id":"B23","split":"blind","q":"What's the VGM deadline on the next direct Singapore-Rotterdam sailing?","gold":[{"op":"cutoff","o":"SGSIN","d":"NLRTM","field":"vgm_cutoff","direct":true}]}
+{"id":"B24","split":"blind","q":"pull up DL-0200 for me","gold":[{"op":"refuse","reason":"no_data"}]}
+{"id":"B25","split":"blind","q":"What's sailing from Busan to Singapore this week, and what happens if we're late with the paperwork cut-off?","gold":[{"op":"list","o":"KRPUS","d":"SGSIN","etd_from":"2026-11-16","etd_to":"2026-11-22"},{"op":"faq","faq":"FAQ-04"}]}
+{"id":"B26","split":"blind","q":"has DEMU7654321 been discharged at Jebel Ali yet?","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"B27","split":"blind","q":"We're moving lithium batteries, class 9. What do you need from us before the booking can be accepted?","gold":[{"op":"faq","faq":"FAQ-07"}]}
+{"id":"B28","split":"blind","q":"How long is the transit to Rotterdam?","gold":[{"op":"refuse","reason":"missing_info"}]}
+{"id":"B29","split":"blind","q":"How many days Hong Kong to Singapore? Also it's frozen seafood - anything special we should state on the booking?","gold":[{"op":"transit","o":"HKHKG","d":"SGSIN"},{"op":"faq","faq":"FAQ-12"}]}
+{"id":"B30","split":"blind","q":"Is there a Ningbo to Los Angeles sailing on 20 November?","gold":[{"op":"list","o":"CNNGB","d":"USLAX","etd_from":"2026-11-20","etd_to":"2026-11-20"}]}

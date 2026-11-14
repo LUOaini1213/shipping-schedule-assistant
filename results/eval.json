@@ -2,18 +2,34 @@
  "as_of": "2026-11-16",
  "summary": {
   "all": {
-   "questions": 64,
-   "answerable": 44,
-   "answerable_correct": 44,
-   "execution_accuracy_pct": 100.0,
-   "should_refuse": 20,
-   "refused_with_correct_reason": 20,
-   "refusal_correctness_pct": 100.0,
-   "refused_any_reason": 20,
-   "false_refusals": 0,
-   "wrong_answers_given": 0,
+   "questions": 94,
+   "answerable": 62,
+   "answerable_correct": 53,
+   "execution_accuracy_pct": 85.5,
+   "should_refuse": 32,
+   "refused_with_correct_reason": 28,
+   "refusal_correctness_pct": 87.5,
+   "refused_any_reason": 32,
+   "false_refusals": 3,
+   "wrong_answers_given": 6,
    "answered_but_should_refuse": 0,
-   "answer_parts_checked": 46,
+   "answer_parts_checked": 62,
+   "answers_with_unsupported_tokens": 0,
+   "hallucination_rate_pct": 0.0
+  },
+  "blind": {
+   "questions": 30,
+   "answerable": 18,
+   "answerable_correct": 9,
+   "execution_accuracy_pct": 50.0,
+   "should_refuse": 12,
+   "refused_with_correct_reason": 8,
+   "refusal_correctness_pct": 66.7,
+   "refused_any_reason": 12,
+   "false_refusals": 3,
+   "wrong_answers_given": 6,
+   "answered_but_should_refuse": 0,
+   "answer_parts_checked": 16,
    "answers_with_unsupported_tokens": 0,
    "hallucination_rate_pct": 0.0
   },
@@ -50,7 +66,308 @@
    "hallucination_rate_pct": 0.0
   }
  },
- "failures": [],
+ "failures": [
+  {
+   "id": "B06",
+   "split": "blind",
+   "question": "Shortest transit option Shanghai to Rotterdam?",
+   "expected": [
+    {
+     "op": "fastest",
+     "ids": [
+      "DL-0102"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "transit",
+     "ids": [
+      "DL-0002",
+      "DL-0028",
+      "DL-0053",
+      "DL-0102",
+      "DL-0127"
+     ],
+     "value": [
+      32,
+      34
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B07",
+   "split": "blind",
+   "question": "what details have to go in the SI?",
+   "expected": [
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-02"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "out_of_scope"
+    }
+   ]
+  },
+  {
+   "id": "B09",
+   "split": "blind",
+   "question": "We load at Pusan for Los Angeles. Which vessel lands there soonest?",
+   "expected": [
+    {
+     "op": "earliest_arrival",
+     "ids": [
+      "DL-0003"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0003",
+      "DL-0029",
+      "DL-0077",
+      "DL-0103",
+      "DL-0128"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "B10",
+   "split": "blind",
+   "question": "next boat spore to klang pls",
+   "expected": [
+    {
+     "op": "next",
+     "ids": [
+      "DL-0008"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0008",
+      "DL-0019",
+      "DL-0033",
+      "DL-0044",
+      "DL-0058",
+      "DL-0068",
+      "DL-0082",
+      "DL-0094",
+      "DL-0108",
+      "DL-0119",
+      "DL-0133",
+      "DL-0144"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "B12",
+   "split": "blind",
+   "question": "By what time do the shipping instructions have to be in for DL-0071?",
+   "expected": [
+    {
+     "op": "cutoff",
+     "ids": [
+      "DL-0071"
+     ],
+     "value": [
+      "2026-12-02 17:00"
+     ]
+    }
+   ],
+   "got": [
+    {
+     "op": "detail",
+     "ids": [
+      "DL-0071"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "B13",
+   "split": "blind",
+   "question": "Please move my booking onto the 24 Nov Rotterdam sailing.",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "out_of_scope"
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "missing_info"
+    }
+   ]
+  },
+  {
+   "id": "B16",
+   "split": "blind",
+   "question": "transit time ho chi minh to LA?",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "unknown_port"
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "missing_info"
+    }
+   ]
+  },
+  {
+   "id": "B18",
+   "split": "blind",
+   "question": "How firm are the departure dates you show? Our last vessel slipped by three days.",
+   "expected": [
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-11"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "missing_info"
+    }
+   ]
+  },
+  {
+   "id": "B19",
+   "split": "blind",
+   "question": "Which sailings from Hong Kong get into Singapore by 30 Nov?",
+   "expected": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0016"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0016",
+      "DL-0041"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "B20",
+   "split": "blind",
+   "question": "How many free days of demurrage do we get in Hamburg?",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "out_of_scope"
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "missing_info"
+    }
+   ]
+  },
+  {
+   "id": "B25",
+   "split": "blind",
+   "question": "What's sailing from Busan to Singapore this week, and what happens if we're late with the paperwork cut-off?",
+   "expected": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0014"
+     ],
+     "value": null
+    },
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-04"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "cutoff",
+     "ids": [
+      "DL-0014"
+     ],
+     "value": [
+      "2026-11-18 16:00"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B26",
+   "split": "blind",
+   "question": "has DEMU7654321 been discharged at Jebel Ali yet?",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "out_of_scope"
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "missing_info"
+    }
+   ]
+  },
+  {
+   "id": "B27",
+   "split": "blind",
+   "question": "We're moving lithium batteries, class 9. What do you need from us before the booking can be accepted?",
+   "expected": [
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-07"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "out_of_scope"
+    }
+   ]
+  }
+ ],
  "items": [
   {
    "id": "D01",
@@ -559,6 +876,246 @@
   {
    "id": "H32",
    "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B01",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B02",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B03",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B04",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B05",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B06",
+   "split": "blind",
+   "parser": "rule",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B07",
+   "split": "blind",
+   "parser": "rule",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B08",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B09",
+   "split": "blind",
+   "parser": "rule",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B10",
+   "split": "blind",
+   "parser": "rule",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B11",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B12",
+   "split": "blind",
+   "parser": "rule",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B13",
+   "split": "blind",
+   "parser": "rule",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B14",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B15",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B16",
+   "split": "blind",
+   "parser": "rule",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B17",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B18",
+   "split": "blind",
+   "parser": "rule",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B19",
+   "split": "blind",
+   "parser": "rule",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B20",
+   "split": "blind",
+   "parser": "rule",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B21",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B22",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B23",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B24",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B25",
+   "split": "blind",
+   "parser": "rule",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B26",
+   "split": "blind",
+   "parser": "rule",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B27",
+   "split": "blind",
+   "parser": "rule",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B28",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B29",
+   "split": "blind",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B30",
+   "split": "blind",
    "parser": "rule",
    "correct": true,
    "refused": true,
