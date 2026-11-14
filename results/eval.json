@@ -1,19 +1,26 @@
 {
  "as_of": "2026-11-16",
+ "dataset": {
+  "sailings": 151,
+  "ports": 12,
+  "lanes": 21,
+  "carriers": 3,
+  "faq_entries": 12
+ },
  "summary": {
   "all": {
-   "questions": 94,
-   "answerable": 62,
-   "answerable_correct": 62,
-   "execution_accuracy_pct": 100.0,
-   "should_refuse": 32,
-   "refused_with_correct_reason": 32,
-   "refusal_correctness_pct": 100.0,
-   "refused_any_reason": 32,
-   "false_refusals": 0,
-   "wrong_answers_given": 0,
+   "questions": 124,
+   "answerable": 80,
+   "answerable_correct": 72,
+   "execution_accuracy_pct": 90.0,
+   "should_refuse": 44,
+   "refused_with_correct_reason": 43,
+   "refusal_correctness_pct": 97.7,
+   "refused_any_reason": 44,
+   "false_refusals": 2,
+   "wrong_answers_given": 6,
    "answered_but_should_refuse": 0,
-   "answer_parts_checked": 66,
+   "answer_parts_checked": 82,
    "answers_with_unsupported_tokens": 0,
    "hallucination_rate_pct": 0.0
   },
@@ -30,6 +37,22 @@
    "wrong_answers_given": 0,
    "answered_but_should_refuse": 0,
    "answer_parts_checked": 20,
+   "answers_with_unsupported_tokens": 0,
+   "hallucination_rate_pct": 0.0
+  },
+  "blind2": {
+   "questions": 30,
+   "answerable": 18,
+   "answerable_correct": 10,
+   "execution_accuracy_pct": 55.6,
+   "should_refuse": 12,
+   "refused_with_correct_reason": 11,
+   "refusal_correctness_pct": 91.7,
+   "refused_any_reason": 12,
+   "false_refusals": 2,
+   "wrong_answers_given": 6,
+   "answered_but_should_refuse": 0,
+   "answer_parts_checked": 16,
    "answers_with_unsupported_tokens": 0,
    "hallucination_rate_pct": 0.0
   },
@@ -66,7 +89,254 @@
    "hallucination_rate_pct": 0.0
   }
  },
- "failures": [],
+ "failures": [
+  {
+   "id": "C02",
+   "split": "blind2",
+   "question": "what's the ocean freight for a 20' from Yantian to Hamburg these days",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "out_of_scope"
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "no_data"
+    }
+   ]
+  },
+  {
+   "id": "C03",
+   "split": "blind2",
+   "question": "Which SGSIN-AEJEA service has the lowest number of days at sea?",
+   "expected": [
+    {
+     "op": "fastest",
+     "ids": [
+      "DL-0017",
+      "DL-0066",
+      "DL-0092"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0004",
+      "DL-0017",
+      "DL-0030",
+      "DL-0042",
+      "DL-0054",
+      "DL-0066",
+      "DL-0078",
+      "DL-0092",
+      "DL-0104",
+      "DL-0118",
+      "DL-0129"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "split": "blind2",
+   "question": "If we pull out of a booking a couple of days before the vessel sails, will we get charged for it?",
+   "expected": [
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-06"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "missing_info"
+    }
+   ]
+  },
+  {
+   "id": "C06",
+   "split": "blind2",
+   "question": "Our cargo is ready in Yantian and has to go to Rotterdam. Which departure would put it in Rotterdam first?",
+   "expected": [
+    {
+     "op": "earliest_arrival",
+     "ids": [
+      "DL-0022"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0022",
+      "DL-0047",
+      "DL-0071",
+      "DL-0097",
+      "DL-0122",
+      "DL-0147"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "C09",
+   "split": "blind2",
+   "question": "DL-0092 - when does VGM close?",
+   "expected": [
+    {
+     "op": "cutoff",
+     "ids": [
+      "DL-0092"
+     ],
+     "value": [
+      "2026-12-09 12:00"
+     ]
+    }
+   ],
+   "got": [
+    {
+     "op": "detail",
+     "ids": [
+      "DL-0092"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "C17",
+   "split": "blind2",
+   "question": "First time exporting here. What information does the carrier want from me when I request a booking?",
+   "expected": [
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-01"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "out_of_scope"
+    }
+   ]
+  },
+  {
+   "id": "C18",
+   "split": "blind2",
+   "question": "how many times does a vessel leave Singapore for Port Klang over the next 7 days",
+   "expected": [
+    {
+     "op": "count",
+     "ids": [
+      "DL-0008",
+      "DL-0019"
+     ],
+     "value": 2
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0008",
+      "DL-0019"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "C24",
+   "split": "blind2",
+   "question": "Transit time Singapore to Hamburg? Also, how do I get the container quantity on my booking changed?",
+   "expected": [
+    {
+     "op": "transit",
+     "ids": [
+      "DL-0007",
+      "DL-0032",
+      "DL-0057",
+      "DL-0081",
+      "DL-0107",
+      "DL-0132"
+     ],
+     "value": [
+      27,
+      28
+     ]
+    },
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-05"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "transit",
+     "ids": [
+      "DL-0007",
+      "DL-0032",
+      "DL-0057",
+      "DL-0081",
+      "DL-0107",
+      "DL-0132"
+     ],
+     "value": [
+      27,
+      28
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C28",
+   "split": "blind2",
+   "question": "next week's sailings ningbo to los angeles please, and remind me who has to declare the VGM",
+   "expected": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0027"
+     ],
+     "value": null
+    },
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-03"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0027"
+     ],
+     "value": null
+    }
+   ]
+  }
+ ],
  "items": [
   {
    "id": "D01",
@@ -818,6 +1088,246 @@
    "parser": "rule",
    "correct": true,
    "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C01",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C02",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C03",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C04",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C05",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C06",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C07",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C08",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C09",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C10",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C11",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C12",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C13",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C14",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C15",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C16",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C17",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C18",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C19",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C20",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C21",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C22",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C23",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C24",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C25",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C26",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C27",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C28",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C29",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C30",
+   "split": "blind2",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
    "unsupported_tokens": []
   }
  ]

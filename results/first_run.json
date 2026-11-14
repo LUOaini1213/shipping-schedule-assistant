@@ -1,4 +1,5 @@
 {
+ "_note": "Numbers recorded the first time each question set was run. dev, heldout and blind were first run with parser v1; blind2 was first run with parser v2. blind2_parser_v1 re-runs the v1 parser (git commit in 'commit') on blind2 for comparison.",
  "dev": {
   "summary": {
    "questions": 32,
@@ -16,7 +17,8 @@
    "answers_with_unsupported_tokens": 0,
    "hallucination_rate_pct": 0.0
   },
-  "failed_ids": []
+  "failed_ids": [],
+  "parser": "v1"
  },
  "heldout": {
   "summary": {
@@ -35,7 +37,8 @@
    "answers_with_unsupported_tokens": 0,
    "hallucination_rate_pct": 0.0
   },
-  "failed_ids": []
+  "failed_ids": [],
+  "parser": "v1"
  },
  "blind": {
   "summary": {
@@ -68,6 +71,73 @@
    "B25",
    "B26",
    "B27"
-  ]
+  ],
+  "parser": "v1"
+ },
+ "blind2": {
+  "summary": {
+   "questions": 30,
+   "answerable": 18,
+   "answerable_correct": 10,
+   "execution_accuracy_pct": 55.6,
+   "should_refuse": 12,
+   "refused_with_correct_reason": 11,
+   "refusal_correctness_pct": 91.7,
+   "refused_any_reason": 12,
+   "false_refusals": 2,
+   "wrong_answers_given": 6,
+   "answered_but_should_refuse": 0,
+   "answer_parts_checked": 16,
+   "answers_with_unsupported_tokens": 0,
+   "hallucination_rate_pct": 0.0
+  },
+  "failed_ids": [
+   "C02",
+   "C03",
+   "C04",
+   "C06",
+   "C09",
+   "C17",
+   "C18",
+   "C24",
+   "C28"
+  ],
+  "parser": "v2"
+ },
+ "blind2_parser_v1": {
+  "summary": {
+   "questions": 30,
+   "answerable": 18,
+   "answerable_correct": 8,
+   "execution_accuracy_pct": 44.4,
+   "should_refuse": 12,
+   "refused_with_correct_reason": 8,
+   "refusal_correctness_pct": 66.7,
+   "refused_any_reason": 11,
+   "false_refusals": 2,
+   "wrong_answers_given": 8,
+   "answered_but_should_refuse": 1,
+   "answer_parts_checked": 17,
+   "answers_with_unsupported_tokens": 0,
+   "hallucination_rate_pct": 0.0
+  },
+  "failed_ids": [
+   "C02",
+   "C03",
+   "C04",
+   "C06",
+   "C08",
+   "C09",
+   "C10",
+   "C15",
+   "C16",
+   "C17",
+   "C18",
+   "C19",
+   "C24",
+   "C28"
+  ],
+  "parser": "v1",
+  "commit": "1d28ae2"
  }
 }

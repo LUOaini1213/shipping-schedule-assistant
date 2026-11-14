@@ -1,0 +1,30 @@
+{"id":"C01","split":"blind2","q":"pls send me whatever you have ex ningbo into singapore for december","gold":[{"op":"list","o":"CNNGB","d":"SGSIN","etd_from":"2026-12-01","etd_to":"2026-12-31"}]}
+{"id":"C02","split":"blind2","q":"what's the ocean freight for a 20' from Yantian to Hamburg these days","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"C03","split":"blind2","q":"Which SGSIN-AEJEA service has the lowest number of days at sea?","gold":[{"op":"fastest","o":"SGSIN","d":"AEJEA"}]}
+{"id":"C04","split":"blind2","q":"If we pull out of a booking a couple of days before the vessel sails, will we get charged for it?","gold":[{"op":"faq","faq":"FAQ-06"}]}
+{"id":"C05","split":"blind2","q":"sailings from Singapore to Jakarta in december?","gold":[{"op":"refuse","reason":"unknown_port"}]}
+{"id":"C06","split":"blind2","q":"Our cargo is ready in Yantian and has to go to Rotterdam. Which departure would put it in Rotterdam first?","gold":[{"op":"earliest_arrival","o":"CNYTN","d":"NLRTM"}]}
+{"id":"C07","split":"blind2","q":"any sailings out of Ningbo this week?","gold":[{"op":"refuse","reason":"missing_info"}]}
+{"id":"C08","split":"blind2","q":"when does the next ship leave colombo for rotterdam","gold":[{"op":"next","o":"LKCMB","d":"NLRTM"}]}
+{"id":"C09","split":"blind2","q":"DL-0092 - when does VGM close?","gold":[{"op":"cutoff","id":"DL-0092","field":"vgm_cutoff"}]}
+{"id":"C10","split":"blind2","q":"Please cancel booking 88213 for me, the order fell through.","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"C11","split":"blind2","q":"Gate-in deadline for the upcoming Demo Line Alfa vessel from Singapore to Jebel Ali?","gold":[{"op":"cutoff","o":"SGSIN","d":"AEJEA","field":"cy_cutoff","carrier":"Demo Line Alfa"}]}
+{"id":"C12","split":"blind2","q":"Hamburg to Rotterdam, anything departing next week?","gold":[{"op":"refuse","reason":"no_data"}]}
+{"id":"C13","split":"blind2","q":"dl-0058, can I have the complete record for that one","gold":[{"op":"detail","id":"DL-0058"}]}
+{"id":"C14","split":"blind2","q":"Do you have anything without transshipment from Shanghai to Singapore this week?","gold":[{"op":"list","o":"CNSHA","d":"SGSIN","etd_from":"2026-11-16","etd_to":"2026-11-22","direct":true}]}
+{"id":"C15","split":"blind2","q":"Laem Chabang to Rotterdam, transit days?","gold":[{"op":"refuse","reason":"unknown_port"}]}
+{"id":"C16","split":"blind2","q":"Shipping out of Busan and the goods must arrive in Los Angeles by 20 December. What works?","gold":[{"op":"list","o":"KRPUS","d":"USLAX","eta_to":"2026-12-20"}]}
+{"id":"C17","split":"blind2","q":"First time exporting here. What information does the carrier want from me when I request a booking?","gold":[{"op":"faq","faq":"FAQ-01"}]}
+{"id":"C18","split":"blind2","q":"how many times does a vessel leave Singapore for Port Klang over the next 7 days","gold":[{"op":"count","o":"SGSIN","d":"MYPKG","etd_from":"2026-11-16","etd_to":"2026-11-23"}]}
+{"id":"C19","split":"blind2","q":"ETA update on container TGHU1122334 please, it left Shanghai last week","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"C20","split":"blind2","q":"Singapore-Rotterdam in December, Demo Line Alfa only","gold":[{"op":"list","o":"SGSIN","d":"NLRTM","etd_from":"2026-12-01","etd_to":"2026-12-31","carrier":"Demo Line Alfa"}]}
+{"id":"C21","split":"blind2","q":"vgm cut-off for DL-0152?","gold":[{"op":"refuse","reason":"no_data"}]}
+{"id":"C22","split":"blind2","q":"Is the certificate of origin something the shipping line issues, or do we have to get it elsewhere?","gold":[{"op":"faq","faq":"FAQ-10"}]}
+{"id":"C23","split":"blind2","q":"What's the earliest arrival into Los Angeles?","gold":[{"op":"refuse","reason":"missing_info"}]}
+{"id":"C24","split":"blind2","q":"Transit time Singapore to Hamburg? Also, how do I get the container quantity on my booking changed?","gold":[{"op":"transit","o":"SGSIN","d":"DEHAM"},{"op":"faq","faq":"FAQ-05"}]}
+{"id":"C25","split":"blind2","q":"next vessel Shanghai to Antwerp","gold":[{"op":"refuse","reason":"unknown_port"}]}
+{"id":"C26","split":"blind2","q":"We ship chilled dairy. What should the booking specify for a reefer container?","gold":[{"op":"faq","faq":"FAQ-12"}]}
+{"id":"C27","split":"blind2","q":"Is marine cargo insurance included, or do we arrange that ourselves?","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"C28","split":"blind2","q":"next week's sailings ningbo to los angeles please, and remind me who has to declare the VGM","gold":[{"op":"list","o":"CNNGB","d":"USLAX","etd_from":"2026-11-23","etd_to":"2026-11-29"},{"op":"faq","faq":"FAQ-03"}]}
+{"id":"C29","split":"blind2","q":"Shanghai to Singapore departures on 15 Jan 2027?","gold":[{"op":"refuse","reason":"no_data"}]}
+{"id":"C30","split":"blind2","q":"SI deadline for the first Shanghai to Rotterdam sailing in December?","gold":[{"op":"cutoff","o":"CNSHA","d":"NLRTM","field":"doc_cutoff","etd_from":"2026-12-01","etd_to":"2026-12-31"}]}

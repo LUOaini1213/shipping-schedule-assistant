@@ -1,0 +1,19 @@
+{
+ "first": {
+  "mutants": 40,
+  "killed": 38,
+  "survived": 2,
+  "survivors": [
+   "origin cue ignored",
+   "oracle keeps past departures"
+  ],
+  "tests_in_suite": 110
+ },
+ "final": {
+  "mutants": 40,
+  "killed": 40,
+  "survived": 0,
+  "survivors": [],
+  "tests_in_suite": 112
+ }
+}

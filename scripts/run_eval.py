@@ -37,10 +37,12 @@ def literal_hallucinations(part):
     return bad
 
 
-def evaluate(parser_fn):
+def evaluate(parser_fn, splits=None):
     expected = oracle.build()
     items = []
     for q in oracle.load_questions():
+        if splits and q["split"] not in splits:
+            continue
         parts, name = parser_fn(q["q"])
         res = engine.answer(q["q"], parts=parts, parser_name=name)
         got, exp = engine.key(res), expected[q["id"]]
@@ -87,7 +89,11 @@ def summarise(items):
 
 def report(items):
     splits = sorted({i["split"] for i in items})
-    out = {"as_of": data.meta()["as_of"], "summary": {"all": summarise(items)}}
+    out = {"as_of": data.meta()["as_of"],
+           "dataset": {"sailings": len(data.rows()), "ports": len(data.ports()),
+                       "lanes": len({(r["origin_code"], r["dest_code"]) for r in data.rows()}),
+                       "carriers": len(data.carriers()), "faq_entries": len(data.faq())},
+           "summary": {"all": summarise(items)}}
     for s in splits:
         out["summary"][s] = summarise([i for i in items if i["split"] == s])
     out["failures"] = [{k: i[k] for k in ("id", "split", "question", "expected", "got")}
@@ -102,11 +108,13 @@ def main():
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--first-run", metavar="SPLIT")
     ap.add_argument("--llm", metavar="MODEL")
+    ap.add_argument("--splits", help="comma-separated splits (LLM run only)")
     a = ap.parse_args()
     RESULTS.mkdir(exist_ok=True)
     as_of = data.meta()["as_of"]
     if a.llm:
-        rep = report(evaluate(lambda q: llm.parse_with_ollama(q, as_of, a.llm)))
+        splits = a.splits.split(",") if a.splits else None
+        rep = report(evaluate(lambda q: llm.parse_with_ollama(q, as_of, a.llm), splits))
         rep["model"] = a.llm
         rep["fallbacks_to_rule_parser"] = sum(i["parser"] == "rule-fallback" for i in rep["items"])
         rep["note"] = "Optional run on one machine; not reproduced in CI."

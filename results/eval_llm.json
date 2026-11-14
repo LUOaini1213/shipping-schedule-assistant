@@ -1,0 +1,1137 @@
+{
+ "as_of": "2026-11-16",
+ "summary": {
+  "all": {
+   "questions": 60,
+   "answerable": 36,
+   "answerable_correct": 23,
+   "execution_accuracy_pct": 63.9,
+   "should_refuse": 24,
+   "refused_with_correct_reason": 13,
+   "refusal_correctness_pct": 54.2,
+   "refused_any_reason": 18,
+   "false_refusals": 1,
+   "wrong_answers_given": 12,
+   "answered_but_should_refuse": 6,
+   "answer_parts_checked": 45,
+   "answers_with_unsupported_tokens": 0,
+   "hallucination_rate_pct": 0.0
+  },
+  "blind": {
+   "questions": 30,
+   "answerable": 18,
+   "answerable_correct": 11,
+   "execution_accuracy_pct": 61.1,
+   "should_refuse": 12,
+   "refused_with_correct_reason": 5,
+   "refusal_correctness_pct": 41.7,
+   "refused_any_reason": 8,
+   "false_refusals": 1,
+   "wrong_answers_given": 6,
+   "answered_but_should_refuse": 4,
+   "answer_parts_checked": 23,
+   "answers_with_unsupported_tokens": 0,
+   "hallucination_rate_pct": 0.0
+  },
+  "blind2": {
+   "questions": 30,
+   "answerable": 18,
+   "answerable_correct": 12,
+   "execution_accuracy_pct": 66.7,
+   "should_refuse": 12,
+   "refused_with_correct_reason": 8,
+   "refusal_correctness_pct": 66.7,
+   "refused_any_reason": 10,
+   "false_refusals": 0,
+   "wrong_answers_given": 6,
+   "answered_but_should_refuse": 2,
+   "answer_parts_checked": 22,
+   "answers_with_unsupported_tokens": 0,
+   "hallucination_rate_pct": 0.0
+  }
+ },
+ "failures": [
+  {
+   "id": "B02",
+   "split": "blind",
+   "question": "can you quote all-in for 2x40HC ningbo to los angeles",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "out_of_scope"
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0001",
+      "DL-0027",
+      "DL-0052",
+      "DL-0076",
+      "DL-0101",
+      "DL-0126"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "B04",
+   "split": "blind",
+   "question": "how many departures do you have dubai to rotterdam in december",
+   "expected": [
+    {
+     "op": "count",
+     "ids": [
+      "DL-0073",
+      "DL-0149"
+     ],
+     "value": 2
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "unknown_port"
+    }
+   ]
+  },
+  {
+   "id": "B05",
+   "split": "blind",
+   "question": "Singapore to Felixstowe - what do you have in December?",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "unknown_port"
+    }
+   ],
+   "got": [
+    {
+     "op": "cutoff",
+     "ids": [
+      "DL-0020"
+     ],
+     "value": [
+      "2026-11-18 12:00"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B09",
+   "split": "blind",
+   "question": "We load at Pusan for Los Angeles. Which vessel lands there soonest?",
+   "expected": [
+    {
+     "op": "earliest_arrival",
+     "ids": [
+      "DL-0003"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0003",
+      "DL-0029",
+      "DL-0077",
+      "DL-0103",
+      "DL-0128"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "B10",
+   "split": "blind",
+   "question": "next boat spore to klang pls",
+   "expected": [
+    {
+     "op": "next",
+     "ids": [
+      "DL-0008"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0008",
+      "DL-0019",
+      "DL-0033",
+      "DL-0044",
+      "DL-0058",
+      "DL-0068",
+      "DL-0082",
+      "DL-0094",
+      "DL-0108",
+      "DL-0119",
+      "DL-0133",
+      "DL-0144"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "B11",
+   "split": "blind",
+   "question": "Any service from Busan to Rotterdam?",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "no_data"
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "unknown_port"
+    }
+   ]
+  },
+  {
+   "id": "B12",
+   "split": "blind",
+   "question": "By what time do the shipping instructions have to be in for DL-0071?",
+   "expected": [
+    {
+     "op": "cutoff",
+     "ids": [
+      "DL-0071"
+     ],
+     "value": [
+      "2026-12-02 17:00"
+     ]
+    }
+   ],
+   "got": [
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-02"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "B13",
+   "split": "blind",
+   "question": "Please move my booking onto the 24 Nov Rotterdam sailing.",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "out_of_scope"
+    }
+   ],
+   "got": [
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-11"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "B18",
+   "split": "blind",
+   "question": "How firm are the departure dates you show? Our last vessel slipped by three days.",
+   "expected": [
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-11"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-04"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "B20",
+   "split": "blind",
+   "question": "How many free days of demurrage do we get in Hamburg?",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "out_of_scope"
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "unknown_port"
+    }
+   ]
+  },
+  {
+   "id": "B21",
+   "split": "blind",
+   "question": "Shanghai to LA with Demo Line Charlie, departing before 5 December - what's available?",
+   "expected": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0021",
+      "DL-0046"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0021",
+      "DL-0046",
+      "DL-0070"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "B26",
+   "split": "blind",
+   "question": "has DEMU7654321 been discharged at Jebel Ali yet?",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "out_of_scope"
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "unknown_port"
+    }
+   ]
+  },
+  {
+   "id": "B29",
+   "split": "blind",
+   "question": "How many days Hong Kong to Singapore? Also it's frozen seafood - anything special we should state on the booking?",
+   "expected": [
+    {
+     "op": "transit",
+     "ids": [
+      "DL-0016",
+      "DL-0041",
+      "DL-0065",
+      "DL-0091",
+      "DL-0117",
+      "DL-0142"
+     ],
+     "value": [
+      4,
+      6
+     ]
+    },
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-12"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "transit",
+     "ids": [
+      "DL-0016",
+      "DL-0041",
+      "DL-0065",
+      "DL-0091",
+      "DL-0117",
+      "DL-0142"
+     ],
+     "value": [
+      4,
+      6
+     ]
+    },
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-02"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "B30",
+   "split": "blind",
+   "question": "Is there a Ningbo to Los Angeles sailing on 20 November?",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "no_data"
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0027",
+      "DL-0052",
+      "DL-0076",
+      "DL-0101",
+      "DL-0126"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "C02",
+   "split": "blind2",
+   "question": "what's the ocean freight for a 20' from Yantian to Hamburg these days",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "out_of_scope"
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "no_data"
+    }
+   ]
+  },
+  {
+   "id": "C03",
+   "split": "blind2",
+   "question": "Which SGSIN-AEJEA service has the lowest number of days at sea?",
+   "expected": [
+    {
+     "op": "fastest",
+     "ids": [
+      "DL-0017",
+      "DL-0066",
+      "DL-0092"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0004",
+      "DL-0017",
+      "DL-0030",
+      "DL-0042",
+      "DL-0054",
+      "DL-0066",
+      "DL-0078",
+      "DL-0092",
+      "DL-0104",
+      "DL-0118",
+      "DL-0129"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "split": "blind2",
+   "question": "If we pull out of a booking a couple of days before the vessel sails, will we get charged for it?",
+   "expected": [
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-06"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-05"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "C06",
+   "split": "blind2",
+   "question": "Our cargo is ready in Yantian and has to go to Rotterdam. Which departure would put it in Rotterdam first?",
+   "expected": [
+    {
+     "op": "earliest_arrival",
+     "ids": [
+      "DL-0022"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "fastest",
+     "ids": [
+      "DL-0022",
+      "DL-0047",
+      "DL-0071",
+      "DL-0097",
+      "DL-0122",
+      "DL-0147"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "C07",
+   "split": "blind2",
+   "question": "any sailings out of Ningbo this week?",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "missing_info"
+    }
+   ],
+   "got": [
+    {
+     "op": "refuse",
+     "reason": "no_data"
+    }
+   ]
+  },
+  {
+   "id": "C10",
+   "split": "blind2",
+   "question": "Please cancel booking 88213 for me, the order fell through.",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "out_of_scope"
+    }
+   ],
+   "got": [
+    {
+     "op": "faq",
+     "ids": [
+      "FAQ-06"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "C11",
+   "split": "blind2",
+   "question": "Gate-in deadline for the upcoming Demo Line Alfa vessel from Singapore to Jebel Ali?",
+   "expected": [
+    {
+     "op": "cutoff",
+     "ids": [
+      "DL-0017"
+     ],
+     "value": [
+      "2026-11-18 12:00"
+     ]
+    }
+   ],
+   "got": [
+    {
+     "op": "cutoff",
+     "ids": [
+      "DL-0017"
+     ],
+     "value": [
+      "2026-11-18 08:00"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C20",
+   "split": "blind2",
+   "question": "Singapore-Rotterdam in December, Demo Line Alfa only",
+   "expected": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0083",
+      "DL-0109",
+      "DL-0134"
+     ],
+     "value": null
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0034",
+      "DL-0083",
+      "DL-0109",
+      "DL-0134"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "C25",
+   "split": "blind2",
+   "question": "next vessel Shanghai to Antwerp",
+   "expected": [
+    {
+     "op": "refuse",
+     "reason": "unknown_port"
+    }
+   ],
+   "got": [
+    {
+     "op": "list",
+     "ids": [
+      "DL-0002",
+      "DL-0028",
+      "DL-0053",
+      "DL-0102",
+      "DL-0127"
+     ],
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "C30",
+   "split": "blind2",
+   "question": "SI deadline for the first Shanghai to Rotterdam sailing in December?",
+   "expected": [
+    {
+     "op": "cutoff",
+     "ids": [
+      "DL-0102"
+     ],
+     "value": [
+      "2026-12-12 12:00"
+     ]
+    }
+   ],
+   "got": [
+    {
+     "op": "cutoff",
+     "ids": [
+      "DL-0002"
+     ],
+     "value": [
+      "2026-11-15 18:00"
+     ]
+    }
+   ]
+  }
+ ],
+ "items": [
+  {
+   "id": "B01",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B02",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B03",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B04",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B05",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B06",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B07",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B08",
+   "split": "blind",
+   "parser": "rule-fallback",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B09",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B10",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B11",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B12",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B13",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B14",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B15",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B16",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B17",
+   "split": "blind",
+   "parser": "rule-fallback",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B18",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B19",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B20",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B21",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B22",
+   "split": "blind",
+   "parser": "rule-fallback",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B23",
+   "split": "blind",
+   "parser": "rule-fallback",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B24",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B25",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B26",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B27",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B28",
+   "split": "blind",
+   "parser": "rule-fallback",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B29",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "B30",
+   "split": "blind",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C01",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C02",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C03",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C04",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C05",
+   "split": "blind2",
+   "parser": "rule-fallback",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C06",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C07",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C08",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C09",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C10",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C11",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C12",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C13",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C14",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C15",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C16",
+   "split": "blind2",
+   "parser": "rule-fallback",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C17",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C18",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C19",
+   "split": "blind2",
+   "parser": "rule-fallback",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C20",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C21",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C22",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C23",
+   "split": "blind2",
+   "parser": "rule-fallback",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C24",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C25",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C26",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C27",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C28",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C29",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "C30",
+   "split": "blind2",
+   "parser": "llm:gemma3:4b",
+   "correct": false,
+   "refused": false,
+   "unsupported_tokens": []
+  }
+ ],
+ "model": "gemma3:4b",
+ "fallbacks_to_rule_parser": 9,
+ "note": "Optional run on one machine; not reproduced in CI."
+}

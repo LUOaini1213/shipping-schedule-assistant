@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schedule Assistant - prototype (fictional sample data)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="banner" role="note">
+  <strong>PROTOTYPE</strong> &middot; fictional sample data &middot; not a real carrier schedule &middot;
+  not affiliated with any carrier &middot; data as of <span id="asof"></span>
+</div>
+<header class="top">
+  <a class="brand" href="#/search"><span class="logo" aria-hidden="true"></span>Schedule Assistant</a>
+  <nav>
+    <a href="#/search" data-nav="search">Find sailings</a>
+    <a href="#/ask" data-nav="ask">Ask a question</a>
+  </nav>
+</header>
+<main id="view"></main>
+<aside id="drawer" class="drawer" aria-hidden="true">
+  <div class="drawer-head">
+    <h2>Source of this answer</h2>
+    <button id="drawer-close" class="ghost" aria-label="Close source panel">Close</button>
+  </div>
+  <div id="drawer-body"></div>
+</aside>
+<div id="scrim" class="scrim"></div>
+<footer>Personal product project. Sample sailings are invented; only the port names are real.</footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

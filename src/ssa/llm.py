@@ -20,16 +20,32 @@ SAILING = re.compile(r"^DL-\d{4}$")
 
 
 def build_prompt(question, as_of):
+    from datetime import date, timedelta
+    today = date.fromisoformat(as_of)
+    monday = today - timedelta(days=today.weekday())
+    nw0, nw1 = (monday + timedelta(days=7)).isoformat(), (monday + timedelta(days=13)).isoformat()
     ports = ", ".join(f"{p['name']}={p['code']}" for p in data.ports())
     topics = "; ".join(f"{e['id']}={e['topic']}" for e in data.faq())
-    return f"""You convert a shipper's question into a JSON query. Today is {as_of} (a Monday).
+    return f"""You convert a shipper's question into a JSON query. Today is {as_of}.
 Return only JSON: {{"parts": [part, ...]}} with one part, or two parts when the question asks for sailings and also a booking/documents question.
 Schedule part keys: "op" (list, count, transit, fastest, earliest_arrival, next, cutoff, detail), "origin" and "dest" (port codes), or "sailing_id" (DL-nnnn) for detail/cutoff; optional "etd_from", "etd_to", "eta_to" (YYYY-MM-DD, inclusive), "direct" (true), "carrier" ({", ".join(data.carriers())}); cutoff needs "field" (cy_cutoff, doc_cutoff, vgm_cutoff).
 FAQ part: {{"op": "faq", "faq_id": "FAQ-nn"}}. Topics: {topics}.
 Refusal part: {{"op": "refuse", "reason": R}}, R = out_of_scope (rates, tracking, customs duty, making a booking, anything else), unknown_port (a port not in the list), missing_info (origin or destination missing and no sailing id).
 Known ports: {ports}.
 Dates: this week = Monday to Sunday containing today; next week = the following Monday to Sunday; next N days = today to today+N; a month name = that whole month; "before X" = etd_to the day before X; "arriving by X" = eta_to X. Omit keys you do not need.
-Question: {question}"""
+Examples (today {as_of}):
+Q: Which sailings go from Shanghai to Busan next week?
+A: {{"parts": [{{"op": "list", "origin": "CNSHA", "dest": "KRPUS", "etd_from": "{nw0}", "etd_to": "{nw1}"}}]}}
+Q: fastest way hong kong to jebel ali, and how do I cancel a booking?
+A: {{"parts": [{{"op": "fastest", "origin": "HKHKG", "dest": "AEJEA"}}, {{"op": "faq", "faq_id": "FAQ-06"}}]}}
+Q: doc cut-off for DL-0001?
+A: {{"parts": [{{"op": "cutoff", "sailing_id": "DL-0001", "field": "doc_cutoff"}}]}}
+Q: What is VGM?
+A: {{"parts": [{{"op": "faq", "faq_id": "FAQ-03"}}]}}
+Q: How much is the freight to Hamburg?
+A: {{"parts": [{{"op": "refuse", "reason": "out_of_scope"}}]}}
+Q: {question}
+A:"""
 
 
 def validate(parts):
@@ -87,7 +103,7 @@ def parse_with_ollama(question, as_of, model, host="http://127.0.0.1:11434", tim
     from datetime import date
     try:
         body = json.dumps({"model": model, "prompt": build_prompt(question, as_of),
-                           "format": "json", "stream": False, "think": False,
+                           "format": "json", "stream": False,
                            "options": {"temperature": 0}}).encode("utf-8")
         req = urllib.request.Request(host + "/api/generate", data=body,
                                      headers={"Content-Type": "application/json"})
