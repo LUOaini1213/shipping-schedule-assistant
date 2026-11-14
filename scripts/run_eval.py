@@ -110,7 +110,7 @@ def main():
         rep["model"] = a.llm
         rep["fallbacks_to_rule_parser"] = sum(i["parser"] == "rule-fallback" for i in rep["items"])
         rep["note"] = "Optional run on one machine; not reproduced in CI."
-        (RESULTS / "eval_llm.json").write_text(json.dumps(rep, indent=1) + "\n", encoding="utf-8")
+        (RESULTS / "eval_llm.json").write_text(json.dumps(rep, indent=1) + "\n", encoding="utf-8", newline="\n")
         print(json.dumps(rep["summary"], indent=1))
         return
     rep = report(evaluate(lambda q: (None, "rule")))
@@ -128,8 +128,8 @@ def main():
             sys.exit(f"first run for {a.first_run} is already recorded")
         fr[a.first_run] = {"summary": rep["summary"][a.first_run],
                            "failed_ids": [f["id"] for f in rep["failures"] if f["split"] == a.first_run]}
-        fr_path.write_text(json.dumps(fr, indent=1) + "\n", encoding="utf-8")
-    path.write_text(text, encoding="utf-8")
+        fr_path.write_text(json.dumps(fr, indent=1) + "\n", encoding="utf-8", newline="\n")
+    path.write_text(text, encoding="utf-8", newline="\n")
     for s, v in rep["summary"].items():
         print(s, v["answerable_correct"], "/", v["answerable"], "exec |",
               v["refused_with_correct_reason"], "/", v["should_refuse"], "refusal |",

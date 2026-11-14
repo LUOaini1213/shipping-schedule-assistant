@@ -24,25 +24,31 @@ _MONTH_RE = "|".join(sorted(MONTHS, key=len, reverse=True))
 OUT_OF_SCOPE = re.compile(
     r"\b(rates?|prices?|pricing|costs?|quote|quotation|how much|freight charge|surcharges?"
     r"|track|tracking|where is my|weather|duty|duties|tariff|tax|poem|joke"
-    r"|book (a|it|this|me)\b|book .* for me|place a booking for)\b")
+    r"|book (a|it|this|me)\b|book .* for me|place a booking for"
+    r"|demurrage|detention|free days|free time)\b"
+    r"|\b[a-z]{4}\d{7}\b"                                   # a container number: tracking
+    r"|^(please|pls|kindly)\b.*\b(move|change|cancel|amend|rebook|book)\b")  # do it for me
 SCHEDULE_WORDS = re.compile(
     r"\b(sailings?|schedules?|vessels?|depart\w*|cut-?offs?|cut off|transit|voyage|etd|eta|arriv\w*)\b")
-CUTOFF = re.compile(r"cut-?off|cut off|closing|deadline|by when|latest time|gate[- ]in")
+CUTOFF = re.compile(r"cut-?off|cut off|closing|deadline|by when|by what time|latest time"
+                    r"|gate[- ]in|have to be in|\bdue\b")
 DOC_FIELD = re.compile(r"\bdoc\b|\bdocs\b|documentation|\bsi\b|shipping instruction")
 COUNT = re.compile(r"how many (sailings|departures|vessels|options)|\bcount\b|number of sailings")
 TRANSIT = re.compile(r"transit|how long|how many days|duration")
 FASTEST = re.compile(r"fastest|quickest|shortest")
 EARLIEST_ARRIVAL = re.compile(
     r"arrives? (the )?(earliest|first|soonest)|earliest arrival|gets? there first"
-    r"|arrive first|soonest arrival")
-NEXT = re.compile(r"(next|earliest|first|soonest) (\w+ )?(sailing|departure|vessel)")
+    r"|arrive first|soonest arrival"
+    r"|(arriv\w*|lands?|reach\w*|gets? (there|in))\b.{0,20}\b(earliest|first|soonest)")
+NEXT = re.compile(r"(next|earliest|first|soonest) (\w+ )?"
+                  r"(sailing|departure|vessel|boat|ship|service|one|option)\b")
 DIRECT = re.compile(r"\bdirect\b|non-?stop|no transshipment|without transshipment")
 SAILING_ID = re.compile(r"\bdl-(\d{4})\b")
 ORIGIN_CUE = re.compile(r"(from|ex|leave|leaves|leaving|departing|depart|out of)\s+$")
 DEST_CUE = re.compile(r"(to|into|for|->|→|arriving|arrive in|reach)\s+$")
 UNKNOWN_PORT = re.compile(r"\b(?:from|to|into|ex)\s+([A-Z][A-Za-z]+(?:\s[A-Z][A-Za-z]+)?)")
 # FAQ topics that may be added to a schedule question as a second part
-COMPOUND_FAQ = {"FAQ-01", "FAQ-02", "FAQ-05", "FAQ-06", "FAQ-07", "FAQ-08", "FAQ-10", "FAQ-12"}
+COMPOUND_FAQ = {"FAQ-01", "FAQ-02", "FAQ-04", "FAQ-05", "FAQ-06", "FAQ-07", "FAQ-08", "FAQ-10", "FAQ-12"}
 
 
 def _iso(d):
@@ -91,6 +97,34 @@ def has_unknown_port(raw):
         if any(cand == a or cand.startswith(a + " ") for a in known):
             continue
         return True
+    return _lowercase_unknown_port(raw.lower())
+
+
+# words that may sit next to "to" without being a port name
+NOT_A_PORT = set("""sailing sailings vessel vessels boat ship shipping time times option
+options service services schedule schedules departure departures going go goes get gets
+cargo container containers it route way trip next week days long want need how have able
+like due up prior close closer transit cutoff off closing deadline sail sails move moving
+send sending freight export import delivery box boxes load loading""".split())
+
+
+def _lowercase_unknown_port(text):
+    """'x to <known port>' or '<known port> to x' where x is an unrecognised word."""
+    mentions = find_ports(text)
+    for start, end, _code in mentions:
+        left = re.search(r"([a-z]+)\s+to\s+$", text[:start])
+        right = re.match(r"\s+to\s+([a-z]+)", text[end:])
+        spots = []
+        if left:
+            spots.append((left.group(1), left.start(1)))
+        if right:
+            spots.append((right.group(1), end + right.start(1)))
+        for word, pos in spots:
+            if word in NOT_A_PORT or word in MONTHS or len(word) < 3:
+                continue
+            if any(s <= pos < e for s, e, _ in mentions):
+                continue
+            return True
     return False
 
 
@@ -129,8 +163,9 @@ def parse_dates(text, as_of):
         out["etd_from"], out["etd_to"] = _iso(found[0][2]), _iso(found[1][2])
     elif found:
         s, _e, d = found[0]
-        before = text[max(0, s - 22):s]
-        if re.search(r"(arriv\w*|eta|get there|reach\w*)\s+(by|before|on or before)\s+$", before):
+        before = text[max(0, s - 40):s]
+        if re.search(r"(arriv\w*|eta|get there|reach\w*|gets? in(to)?|land\w*)\b.*"
+                     r"\b(by|before|on or before)\s+$", before):
             out["eta_to"] = _iso(d - timedelta(days=1) if before.rstrip().endswith("before")
                                  and "on or before" not in before else d)
         elif re.search(r"(after|from|since|on or after)\s+$", before):
@@ -174,7 +209,8 @@ def match_faq(text):
     """Best FAQ entry by keyword hits; ties broken by the longest keyword hit."""
     best = None
     for e in data.faq():
-        hits = [k for k in e["keywords"] if k in text]
+        hits = [k for k in e["keywords"]
+                if re.search(r"(?<![a-z])" + re.escape(k) + r"(?![a-z])", text)]
         if hits:
             score = (len(hits), max(len(k) for k in hits))
             if best is None or score > best[0]:
@@ -201,7 +237,8 @@ def parse(question, as_of=None):
     faq_id = match_faq(text)
     sid = SAILING_ID.search(text)
     mentions = find_ports(text)
-    is_cutoff = bool(CUTOFF.search(text))
+    # "what happens if I miss the cut-off" is a FAQ question, not a cut-off lookup
+    is_cutoff = bool(CUTOFF.search(text)) and faq_id != "FAQ-04"
     field = ("vgm_cutoff" if "vgm" in text else
              "doc_cutoff" if DOC_FIELD.search(text) else "cy_cutoff")
 
@@ -233,10 +270,10 @@ def parse(question, as_of=None):
         part["op"], part["field"] = "cutoff", field
     elif COUNT.search(text):
         part["op"] = "count"
-    elif TRANSIT.search(text):
-        part["op"] = "transit"
     elif FASTEST.search(text):
         part["op"] = "fastest"
+    elif TRANSIT.search(text):
+        part["op"] = "transit"
     elif EARLIEST_ARRIVAL.search(text):
         part["op"] = "earliest_arrival"
     elif NEXT.search(text):

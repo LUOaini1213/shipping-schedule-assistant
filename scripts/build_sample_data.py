@@ -99,7 +99,7 @@ def main():
         "rows": len(rows), "seed": SEED,
         "times": "cut-offs are invented and expressed as local time at the origin port",
     }
-    (ROOT / "data" / "sample_meta.json").write_text(json.dumps(meta, indent=2) + "\n", encoding="utf-8")
+    (ROOT / "data" / "sample_meta.json").write_text(json.dumps(meta, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(len(rows), "rows")
 
 

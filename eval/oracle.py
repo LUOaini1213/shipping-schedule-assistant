@@ -83,7 +83,7 @@ def build():
 
 def main():
     out = build()
-    (HERE / "expected.json").write_text(json.dumps(out, indent=1) + "\n", encoding="utf-8")
+    (HERE / "expected.json").write_text(json.dumps(out, indent=1) + "\n", encoding="utf-8", newline="\n")
     print(len(out), "expected answers written")
 
 
