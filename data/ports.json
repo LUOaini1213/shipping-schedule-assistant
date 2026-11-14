@@ -1,0 +1,17 @@
+{
+  "_note": "Real port names and UN/LOCODEs. Everything else in this folder is fictional sample data.",
+  "ports": [
+    {"code": "SGSIN", "name": "Singapore", "aliases": ["singapore", "sgsin", "spore", "sin"]},
+    {"code": "CNSHA", "name": "Shanghai", "aliases": ["shanghai", "cnsha", "yangshan"]},
+    {"code": "CNNGB", "name": "Ningbo", "aliases": ["ningbo", "cnngb"]},
+    {"code": "CNYTN", "name": "Yantian", "aliases": ["yantian", "cnytn", "shenzhen"]},
+    {"code": "HKHKG", "name": "Hong Kong", "aliases": ["hong kong", "hongkong", "hkhkg", "hkg"]},
+    {"code": "KRPUS", "name": "Busan", "aliases": ["busan", "krpus", "pusan"]},
+    {"code": "MYPKG", "name": "Port Klang", "aliases": ["port klang", "mypkg", "klang"]},
+    {"code": "LKCMB", "name": "Colombo", "aliases": ["colombo", "lkcmb"]},
+    {"code": "AEJEA", "name": "Jebel Ali", "aliases": ["jebel ali", "aejea", "dubai"]},
+    {"code": "NLRTM", "name": "Rotterdam", "aliases": ["rotterdam", "nlrtm"]},
+    {"code": "DEHAM", "name": "Hamburg", "aliases": ["hamburg", "deham"]},
+    {"code": "USLAX", "name": "Los Angeles", "aliases": ["los angeles", "uslax", "la"]}
+  ]
+}

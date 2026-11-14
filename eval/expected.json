@@ -1,0 +1,605 @@
+{
+ "D01": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0034",
+    "DL-0045"
+   ],
+   "value": null
+  }
+ ],
+ "D02": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0009",
+    "DL-0021"
+   ],
+   "value": null
+  }
+ ],
+ "D03": [
+  {
+   "op": "transit",
+   "ids": [
+    "DL-0007",
+    "DL-0032",
+    "DL-0057",
+    "DL-0081",
+    "DL-0107",
+    "DL-0132"
+   ],
+   "value": [
+    27,
+    28
+   ]
+  }
+ ],
+ "D04": [
+  {
+   "op": "transit",
+   "ids": [
+    "DL-0003",
+    "DL-0029",
+    "DL-0077",
+    "DL-0103",
+    "DL-0128"
+   ],
+   "value": [
+    11,
+    12
+   ]
+  }
+ ],
+ "D05": [
+  {
+   "op": "cutoff",
+   "ids": [
+    "DL-0034"
+   ],
+   "value": [
+    "2026-11-23 18:00"
+   ]
+  }
+ ],
+ "D06": [
+  {
+   "op": "cutoff",
+   "ids": [
+    "DL-0004"
+   ],
+   "value": [
+    "2026-11-14 17:00"
+   ]
+  }
+ ],
+ "D07": [
+  {
+   "op": "cutoff",
+   "ids": [
+    "DL-0059"
+   ],
+   "value": [
+    "2026-11-30 14:00"
+   ]
+  }
+ ],
+ "D08": [
+  {
+   "op": "count",
+   "ids": [
+    "DL-0058",
+    "DL-0068",
+    "DL-0082",
+    "DL-0094",
+    "DL-0108",
+    "DL-0119",
+    "DL-0133",
+    "DL-0144"
+   ],
+   "value": 8
+  }
+ ],
+ "D09": [
+  {
+   "op": "fastest",
+   "ids": [
+    "DL-0025",
+    "DL-0074",
+    "DL-0099"
+   ],
+   "value": null
+  }
+ ],
+ "D10": [
+  {
+   "op": "earliest_arrival",
+   "ids": [
+    "DL-0020",
+    "DL-0034"
+   ],
+   "value": null
+  }
+ ],
+ "D11": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0037"
+   ],
+   "value": null
+  }
+ ],
+ "D12": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0078",
+    "DL-0104",
+    "DL-0129"
+   ],
+   "value": null
+  }
+ ],
+ "D13": [
+  {
+   "op": "detail",
+   "ids": [
+    "DL-0102"
+   ],
+   "value": null
+  }
+ ],
+ "D14": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-01"
+   ],
+   "value": null
+  }
+ ],
+ "D15": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-03"
+   ],
+   "value": null
+  }
+ ],
+ "D16": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-05"
+   ],
+   "value": null
+  }
+ ],
+ "D17": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-08"
+   ],
+   "value": null
+  }
+ ],
+ "D18": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-04"
+   ],
+   "value": null
+  }
+ ],
+ "D19": [
+  {
+   "op": "refuse",
+   "reason": "out_of_scope"
+  }
+ ],
+ "D20": [
+  {
+   "op": "refuse",
+   "reason": "out_of_scope"
+  }
+ ],
+ "D21": [
+  {
+   "op": "refuse",
+   "reason": "unknown_port"
+  }
+ ],
+ "D22": [
+  {
+   "op": "refuse",
+   "reason": "no_data"
+  }
+ ],
+ "D23": [
+  {
+   "op": "refuse",
+   "reason": "no_data"
+  }
+ ],
+ "D24": [
+  {
+   "op": "refuse",
+   "reason": "missing_info"
+  }
+ ],
+ "D25": [
+  {
+   "op": "refuse",
+   "reason": "no_data"
+  }
+ ],
+ "D26": [
+  {
+   "op": "refuse",
+   "reason": "no_data"
+  }
+ ],
+ "D27": [
+  {
+   "op": "refuse",
+   "reason": "out_of_scope"
+  }
+ ],
+ "D28": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0064",
+    "DL-0090"
+   ],
+   "value": null
+  }
+ ],
+ "D29": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0102",
+    "DL-0127"
+   ],
+   "value": null
+  }
+ ],
+ "D30": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0034",
+    "DL-0045"
+   ],
+   "value": null
+  },
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-01"
+   ],
+   "value": null
+  }
+ ],
+ "D31": [
+  {
+   "op": "next",
+   "ids": [
+    "DL-0016"
+   ],
+   "value": null
+  }
+ ],
+ "D32": [
+  {
+   "op": "refuse",
+   "reason": "out_of_scope"
+  }
+ ],
+ "H01": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0001",
+    "DL-0027",
+    "DL-0052"
+   ],
+   "value": null
+  }
+ ],
+ "H02": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0069",
+    "DL-0083",
+    "DL-0095",
+    "DL-0109",
+    "DL-0120",
+    "DL-0134",
+    "DL-0145"
+   ],
+   "value": null
+  }
+ ],
+ "H03": [
+  {
+   "op": "transit",
+   "ids": [
+    "DL-0022",
+    "DL-0047",
+    "DL-0071",
+    "DL-0097",
+    "DL-0122",
+    "DL-0147"
+   ],
+   "value": [
+    26,
+    26
+   ]
+  }
+ ],
+ "H04": [
+  {
+   "op": "fastest",
+   "ids": [
+    "DL-0051",
+    "DL-0075",
+    "DL-0125",
+    "DL-0151"
+   ],
+   "value": null
+  }
+ ],
+ "H05": [
+  {
+   "op": "cutoff",
+   "ids": [
+    "DL-0083"
+   ],
+   "value": [
+    "2026-12-06 18:00"
+   ]
+  }
+ ],
+ "H06": [
+  {
+   "op": "cutoff",
+   "ids": [
+    "DL-0021"
+   ],
+   "value": [
+    "2026-11-19 10:00"
+   ]
+  }
+ ],
+ "H07": [
+  {
+   "op": "cutoff",
+   "ids": [
+    "DL-0010"
+   ],
+   "value": [
+    "2026-11-17 08:00"
+   ]
+  }
+ ],
+ "H08": [
+  {
+   "op": "count",
+   "ids": [
+    "DL-0011",
+    "DL-0036",
+    "DL-0061",
+    "DL-0086",
+    "DL-0112",
+    "DL-0137"
+   ],
+   "value": 6
+  }
+ ],
+ "H09": [
+  {
+   "op": "earliest_arrival",
+   "ids": [
+    "DL-0014"
+   ],
+   "value": null
+  }
+ ],
+ "H10": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0017"
+   ],
+   "value": null
+  }
+ ],
+ "H11": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0013",
+    "DL-0038",
+    "DL-0062"
+   ],
+   "value": null
+  }
+ ],
+ "H12": [
+  {
+   "op": "detail",
+   "ids": [
+    "DL-0147"
+   ],
+   "value": null
+  }
+ ],
+ "H13": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-10"
+   ],
+   "value": null
+  }
+ ],
+ "H14": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-07"
+   ],
+   "value": null
+  }
+ ],
+ "H15": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-06"
+   ],
+   "value": null
+  }
+ ],
+ "H16": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-09"
+   ],
+   "value": null
+  }
+ ],
+ "H17": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-08"
+   ],
+   "value": null
+  }
+ ],
+ "H18": [
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-03"
+   ],
+   "value": null
+  }
+ ],
+ "H19": [
+  {
+   "op": "refuse",
+   "reason": "out_of_scope"
+  }
+ ],
+ "H20": [
+  {
+   "op": "refuse",
+   "reason": "out_of_scope"
+  }
+ ],
+ "H21": [
+  {
+   "op": "refuse",
+   "reason": "unknown_port"
+  }
+ ],
+ "H22": [
+  {
+   "op": "refuse",
+   "reason": "no_data"
+  }
+ ],
+ "H23": [
+  {
+   "op": "refuse",
+   "reason": "no_data"
+  }
+ ],
+ "H24": [
+  {
+   "op": "refuse",
+   "reason": "missing_info"
+  }
+ ],
+ "H25": [
+  {
+   "op": "refuse",
+   "reason": "no_data"
+  }
+ ],
+ "H26": [
+  {
+   "op": "refuse",
+   "reason": "out_of_scope"
+  }
+ ],
+ "H27": [
+  {
+   "op": "refuse",
+   "reason": "out_of_scope"
+  }
+ ],
+ "H28": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0007",
+    "DL-0032"
+   ],
+   "value": null
+  }
+ ],
+ "H29": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0087"
+   ],
+   "value": null
+  }
+ ],
+ "H30": [
+  {
+   "op": "cutoff",
+   "ids": [
+    "DL-0040"
+   ],
+   "value": [
+    "2026-11-24 10:00"
+   ]
+  }
+ ],
+ "H31": [
+  {
+   "op": "list",
+   "ids": [
+    "DL-0043"
+   ],
+   "value": null
+  },
+  {
+   "op": "faq",
+   "ids": [
+    "FAQ-02"
+   ],
+   "value": null
+  }
+ ],
+ "H32": [
+  {
+   "op": "refuse",
+   "reason": "unknown_port"
+  }
+ ]
+}

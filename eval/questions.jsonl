@@ -1,0 +1,64 @@
+{"id":"D01","split":"dev","q":"Which sailings go from Singapore to Rotterdam next week?","gold":[{"op":"list","o":"SGSIN","d":"NLRTM","etd_from":"2026-11-23","etd_to":"2026-11-29"}]}
+{"id":"D02","split":"dev","q":"Show me sailings from Shanghai to Los Angeles this week","gold":[{"op":"list","o":"CNSHA","d":"USLAX","etd_from":"2026-11-16","etd_to":"2026-11-22"}]}
+{"id":"D03","split":"dev","q":"What is the transit time from Singapore to Hamburg?","gold":[{"op":"transit","o":"SGSIN","d":"DEHAM"}]}
+{"id":"D04","split":"dev","q":"How long does it take to ship from Busan to Los Angeles?","gold":[{"op":"transit","o":"KRPUS","d":"USLAX"}]}
+{"id":"D05","split":"dev","q":"What is the CY cut-off for sailing DL-0034?","gold":[{"op":"cutoff","id":"DL-0034","field":"cy_cutoff"}]}
+{"id":"D06","split":"dev","q":"When is the documentation cut-off for the next sailing from Singapore to Jebel Ali?","gold":[{"op":"cutoff","o":"SGSIN","d":"AEJEA","field":"doc_cutoff"}]}
+{"id":"D07","split":"dev","q":"VGM cut-off for DL-0059?","gold":[{"op":"cutoff","id":"DL-0059","field":"vgm_cutoff"}]}
+{"id":"D08","split":"dev","q":"How many sailings are there from Singapore to Port Klang in December?","gold":[{"op":"count","o":"SGSIN","d":"MYPKG","etd_from":"2026-12-01","etd_to":"2026-12-31"}]}
+{"id":"D09","split":"dev","q":"What is the fastest sailing from Shanghai to Singapore?","gold":[{"op":"fastest","o":"CNSHA","d":"SGSIN"}]}
+{"id":"D10","split":"dev","q":"Which sailing from Singapore to Rotterdam arrives earliest?","gold":[{"op":"earliest_arrival","o":"SGSIN","d":"NLRTM"}]}
+{"id":"D11","split":"dev","q":"Are there any direct sailings from Singapore to Shanghai next week?","gold":[{"op":"list","o":"SGSIN","d":"CNSHA","etd_from":"2026-11-23","etd_to":"2026-11-29","direct":true}]}
+{"id":"D12","split":"dev","q":"Show Demo Line Bravo sailings from Singapore to Jebel Ali in December","gold":[{"op":"list","o":"SGSIN","d":"AEJEA","etd_from":"2026-12-01","etd_to":"2026-12-31","carrier":"Demo Line Bravo"}]}
+{"id":"D13","split":"dev","q":"Tell me about sailing DL-0102","gold":[{"op":"detail","id":"DL-0102"}]}
+{"id":"D14","split":"dev","q":"What documents do I need to make a booking?","gold":[{"op":"faq","faq":"FAQ-01"}]}
+{"id":"D15","split":"dev","q":"What is VGM?","gold":[{"op":"faq","faq":"FAQ-03"}]}
+{"id":"D16","split":"dev","q":"How do I amend a booking?","gold":[{"op":"faq","faq":"FAQ-05"}]}
+{"id":"D17","split":"dev","q":"What is the difference between an original bill of lading and a sea waybill?","gold":[{"op":"faq","faq":"FAQ-08"}]}
+{"id":"D18","split":"dev","q":"What happens if I miss the CY cut-off?","gold":[{"op":"faq","faq":"FAQ-04"}]}
+{"id":"D19","split":"dev","q":"What is the freight rate from Singapore to Rotterdam?","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"D20","split":"dev","q":"Where is my container ABCU1234567?","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"D21","split":"dev","q":"Sailings from Singapore to Santos next week","gold":[{"op":"refuse","reason":"unknown_port"}]}
+{"id":"D22","split":"dev","q":"Sailings from Rotterdam to Singapore","gold":[{"op":"refuse","reason":"no_data"}]}
+{"id":"D23","split":"dev","q":"Sailings from Singapore to Busan next week?","gold":[{"op":"refuse","reason":"no_data"}]}
+{"id":"D24","split":"dev","q":"When is the next sailing to Hamburg?","gold":[{"op":"refuse","reason":"missing_info"}]}
+{"id":"D25","split":"dev","q":"Sailings from Singapore to Rotterdam on 2027-03-01","gold":[{"op":"refuse","reason":"no_data"}]}
+{"id":"D26","split":"dev","q":"Details of sailing DL-9999","gold":[{"op":"refuse","reason":"no_data"}]}
+{"id":"D27","split":"dev","q":"What's the weather in Rotterdam?","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"D28","split":"dev","q":"Sailings from SGSIN to USLAX between 2026-12-01 and 2026-12-15","gold":[{"op":"list","o":"SGSIN","d":"USLAX","etd_from":"2026-12-01","etd_to":"2026-12-15"}]}
+{"id":"D29","split":"dev","q":"Which sailings from Shanghai to Rotterdam leave after 1 December?","gold":[{"op":"list","o":"CNSHA","d":"NLRTM","etd_from":"2026-12-01"}]}
+{"id":"D30","split":"dev","q":"Which sailings go from Singapore to Rotterdam next week, and what documents do I need to book?","gold":[{"op":"list","o":"SGSIN","d":"NLRTM","etd_from":"2026-11-23","etd_to":"2026-11-29"},{"op":"faq","faq":"FAQ-01"}]}
+{"id":"D31","split":"dev","q":"When is the next sailing from Hong Kong to Singapore?","gold":[{"op":"next","o":"HKHKG","d":"SGSIN"}]}
+{"id":"D32","split":"dev","q":"Can you book a container for me on DL-0034?","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"H01","split":"heldout","q":"I need to ship from Ningbo to LA, what are my options in the next 14 days?","gold":[{"op":"list","o":"CNNGB","d":"USLAX","etd_from":"2026-11-16","etd_to":"2026-11-30"}]}
+{"id":"H02","split":"heldout","q":"sgsin -> nlrtm sailings dec","gold":[{"op":"list","o":"SGSIN","d":"NLRTM","etd_from":"2026-12-01","etd_to":"2026-12-31"}]}
+{"id":"H03","split":"heldout","q":"How many days from Yantian to Rotterdam?","gold":[{"op":"transit","o":"CNYTN","d":"NLRTM"}]}
+{"id":"H04","split":"heldout","q":"Shenzhen to Singapore - quickest option?","gold":[{"op":"fastest","o":"CNYTN","d":"SGSIN"}]}
+{"id":"H05","split":"heldout","q":"Latest time I can gate in for DL-0083?","gold":[{"op":"cutoff","id":"DL-0083","field":"cy_cutoff"}]}
+{"id":"H06","split":"heldout","q":"SI cut-off for the next Charlie sailing from Shanghai to Los Angeles","gold":[{"op":"cutoff","o":"CNSHA","d":"USLAX","field":"doc_cutoff","carrier":"Demo Line Charlie"}]}
+{"id":"H07","split":"heldout","q":"By when must I submit VGM for the next Colombo to Rotterdam sailing?","gold":[{"op":"cutoff","o":"LKCMB","d":"NLRTM","field":"vgm_cutoff"}]}
+{"id":"H08","split":"heldout","q":"Count the sailings from Port Klang to Dubai in the sample","gold":[{"op":"count","o":"MYPKG","d":"AEJEA"}]}
+{"id":"H09","split":"heldout","q":"Which Busan to Singapore sailing gets there first?","gold":[{"op":"earliest_arrival","o":"KRPUS","d":"SGSIN"}]}
+{"id":"H10","split":"heldout","q":"Any non-stop service from Singapore to Jebel Ali this week?","gold":[{"op":"list","o":"SGSIN","d":"AEJEA","etd_from":"2026-11-16","etd_to":"2026-11-22","direct":true}]}
+{"id":"H11","split":"heldout","q":"List Demo Line Alfa departures from Shanghai to Singapore before 2026-12-05","gold":[{"op":"list","o":"CNSHA","d":"SGSIN","etd_to":"2026-12-04","carrier":"Demo Line Alfa"}]}
+{"id":"H12","split":"heldout","q":"Give me the details for dl-0147","gold":[{"op":"detail","id":"DL-0147"}]}
+{"id":"H13","split":"heldout","q":"Do I need a certificate of origin?","gold":[{"op":"faq","faq":"FAQ-10"}]}
+{"id":"H14","split":"heldout","q":"Can I ship dangerous goods, and what paperwork is required?","gold":[{"op":"faq","faq":"FAQ-07"}]}
+{"id":"H15","split":"heldout","q":"How do I cancel my booking?","gold":[{"op":"faq","faq":"FAQ-06"}]}
+{"id":"H16","split":"heldout","q":"What does transshipment mean?","gold":[{"op":"faq","faq":"FAQ-09"}]}
+{"id":"H17","split":"heldout","q":"What is a telex release?","gold":[{"op":"faq","faq":"FAQ-08"}]}
+{"id":"H18","split":"heldout","q":"Who is responsible for declaring the verified gross mass?","gold":[{"op":"faq","faq":"FAQ-03"}]}
+{"id":"H19","split":"heldout","q":"How much does it cost to ship a 40ft container from Shanghai to Hamburg?","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"H20","split":"heldout","q":"Track shipment for booking 123456789","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"H21","split":"heldout","q":"Sailings from Mumbai to Singapore next week","gold":[{"op":"refuse","reason":"unknown_port"}]}
+{"id":"H22","split":"heldout","q":"Is there a sailing from Los Angeles to Shanghai?","gold":[{"op":"refuse","reason":"no_data"}]}
+{"id":"H23","split":"heldout","q":"What sailings leave Hamburg for Singapore in December?","gold":[{"op":"refuse","reason":"no_data"}]}
+{"id":"H24","split":"heldout","q":"What time is the cut-off?","gold":[{"op":"refuse","reason":"missing_info"}]}
+{"id":"H25","split":"heldout","q":"Sailings from Singapore to Hong Kong between 2026-11-17 and 2026-11-29","gold":[{"op":"refuse","reason":"no_data"}]}
+{"id":"H26","split":"heldout","q":"What is the customs duty on electronics into Rotterdam?","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"H27","split":"heldout","q":"Write me a poem about ships","gold":[{"op":"refuse","reason":"out_of_scope"}]}
+{"id":"H28","split":"heldout","q":"Sailings from Singapore to Hamburg arriving by 2026-12-25","gold":[{"op":"list","o":"SGSIN","d":"DEHAM","eta_to":"2026-12-25"}]}
+{"id":"H29","split":"heldout","q":"Which sailings from Singapore to Shanghai depart on 9 Dec?","gold":[{"op":"list","o":"SGSIN","d":"CNSHA","etd_from":"2026-12-09","etd_to":"2026-12-09"}]}
+{"id":"H30","split":"heldout","q":"Next week, what leaves Singapore for Los Angeles and when is the doc cut-off?","gold":[{"op":"cutoff","o":"SGSIN","d":"USLAX","field":"doc_cutoff","etd_from":"2026-11-23","etd_to":"2026-11-29"}]}
+{"id":"H31","split":"heldout","q":"I'm shipping from Singapore to Colombo next week. Which sailing, and how do I submit shipping instructions?","gold":[{"op":"list","o":"SGSIN","d":"LKCMB","etd_from":"2026-11-23","etd_to":"2026-11-29"},{"op":"faq","faq":"FAQ-02"}]}
+{"id":"H32","split":"heldout","q":"What is the transit time from Singapore to Tokyo?","gold":[{"op":"refuse","reason":"unknown_port"}]}
