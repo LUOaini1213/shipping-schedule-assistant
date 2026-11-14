@@ -19,6 +19,15 @@ def load_rows():
         return list(csv.DictReader(f))
 
 
+def load_questions():
+    out = []
+    for path in sorted(HERE.glob("questions*.jsonl")):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                out.append(json.loads(line))
+    return out
+
+
 def expected_part(spec, rows):
     op = spec["op"]
     if op == "refuse":
@@ -67,8 +76,7 @@ def expected_part(spec, rows):
 def build():
     rows = load_rows()
     out = {}
-    for line in (HERE / "questions.jsonl").read_text(encoding="utf-8").splitlines():
-        q = json.loads(line)
+    for q in load_questions():
         out[q["id"]] = [expected_part(s, rows) for s in q["gold"]]
     return out
 

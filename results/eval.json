@@ -1,0 +1,568 @@
+{
+ "as_of": "2026-11-16",
+ "summary": {
+  "all": {
+   "questions": 64,
+   "answerable": 44,
+   "answerable_correct": 44,
+   "execution_accuracy_pct": 100.0,
+   "should_refuse": 20,
+   "refused_with_correct_reason": 20,
+   "refusal_correctness_pct": 100.0,
+   "refused_any_reason": 20,
+   "false_refusals": 0,
+   "wrong_answers_given": 0,
+   "answered_but_should_refuse": 0,
+   "answer_parts_checked": 46,
+   "answers_with_unsupported_tokens": 0,
+   "hallucination_rate_pct": 0.0
+  },
+  "dev": {
+   "questions": 32,
+   "answerable": 22,
+   "answerable_correct": 22,
+   "execution_accuracy_pct": 100.0,
+   "should_refuse": 10,
+   "refused_with_correct_reason": 10,
+   "refusal_correctness_pct": 100.0,
+   "refused_any_reason": 10,
+   "false_refusals": 0,
+   "wrong_answers_given": 0,
+   "answered_but_should_refuse": 0,
+   "answer_parts_checked": 23,
+   "answers_with_unsupported_tokens": 0,
+   "hallucination_rate_pct": 0.0
+  },
+  "heldout": {
+   "questions": 32,
+   "answerable": 22,
+   "answerable_correct": 22,
+   "execution_accuracy_pct": 100.0,
+   "should_refuse": 10,
+   "refused_with_correct_reason": 10,
+   "refusal_correctness_pct": 100.0,
+   "refused_any_reason": 10,
+   "false_refusals": 0,
+   "wrong_answers_given": 0,
+   "answered_but_should_refuse": 0,
+   "answer_parts_checked": 23,
+   "answers_with_unsupported_tokens": 0,
+   "hallucination_rate_pct": 0.0
+  }
+ },
+ "failures": [],
+ "items": [
+  {
+   "id": "D01",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D02",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D03",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D04",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D05",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D06",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D07",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D08",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D09",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D10",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D11",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D12",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D13",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D14",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D15",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D16",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D17",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D18",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D19",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D20",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D21",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D22",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D23",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D24",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D25",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D26",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D27",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D28",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D29",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D30",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D31",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "D32",
+   "split": "dev",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H01",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H02",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H03",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H04",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H05",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H06",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H07",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H08",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H09",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H10",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H11",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H12",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H13",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H14",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H15",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H16",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H17",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H18",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H19",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H20",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H21",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H22",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H23",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H24",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H25",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H26",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H27",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H28",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H29",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H30",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H31",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": false,
+   "unsupported_tokens": []
+  },
+  {
+   "id": "H32",
+   "split": "heldout",
+   "parser": "rule",
+   "correct": true,
+   "refused": true,
+   "unsupported_tokens": []
+  }
+ ]
+}

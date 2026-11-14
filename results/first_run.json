@@ -1,0 +1,40 @@
+{
+ "dev": {
+  "summary": {
+   "questions": 32,
+   "answerable": 22,
+   "answerable_correct": 22,
+   "execution_accuracy_pct": 100.0,
+   "should_refuse": 10,
+   "refused_with_correct_reason": 10,
+   "refusal_correctness_pct": 100.0,
+   "refused_any_reason": 10,
+   "false_refusals": 0,
+   "wrong_answers_given": 0,
+   "answered_but_should_refuse": 0,
+   "answer_parts_checked": 23,
+   "answers_with_unsupported_tokens": 0,
+   "hallucination_rate_pct": 0.0
+  },
+  "failed_ids": []
+ },
+ "heldout": {
+  "summary": {
+   "questions": 32,
+   "answerable": 22,
+   "answerable_correct": 22,
+   "execution_accuracy_pct": 100.0,
+   "should_refuse": 10,
+   "refused_with_correct_reason": 10,
+   "refusal_correctness_pct": 100.0,
+   "refused_any_reason": 10,
+   "false_refusals": 0,
+   "wrong_answers_given": 0,
+   "answered_but_should_refuse": 0,
+   "answer_parts_checked": 23,
+   "answers_with_unsupported_tokens": 0,
+   "hallucination_rate_pct": 0.0
+  },
+  "failed_ids": []
+ }
+}
